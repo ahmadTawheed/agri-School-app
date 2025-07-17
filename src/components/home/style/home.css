@@ -1,0 +1,31 @@
+.sectionBG {
+  background-image: url("./bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensures the background covers the entire section */
+  background-position: center center; /* Centers the background image */
+  height: 100vh; /* Takes full viewport height */
+  width: 100%; /* Takes full width */
+  /* Added overlay for better text readability on varying backgrounds */
+  position: relative; /* Needed for the pseudo-element overlay */
+}
+
+/* Optional: Add a subtle overlay to the background image for better text contrast */
+.sectionBG::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Dark semi-transparent overlay */
+  z-index: 1; /* Place overlay above background image but below content */
+}
+
+/* Ensure content is above the overlay */
+.sectionBG > div {
+  position: relative;
+  z-index: 2; /* Place content above the overlay */
+}
+
+/* No need for specific text-4xl or text-xl styles here if using Tailwind CSS */
+/* ul li:hover, .zIndex, .moreNav are not relevant to HeroSection, so keep them in Navbar's CSS or global CSS if shared. */

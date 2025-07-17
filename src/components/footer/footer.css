@@ -1,0 +1,24 @@
+/* If you prefer to keep link styling in CSS */
+.footer-link {
+  color: #2d4f2b;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease; /* Ensure smooth transition for both */
+  font-size: 16px; /* Default size, will be overridden by Tailwind if specified */
+}
+
+.footer-link:hover {
+  transform: translateX(-5px); /* Move left on hover */
+  color: #ffb823; /* Change color on hover */
+}
+
+/* Ensure these are removed if not used elsewhere */
+/* footer div p {
+    color: #2D4F2B;
+    cursor: pointer;
+    transform: translateX(0px);
+    transition: ease 0.2s;
+}
+footer div p:hover{
+    transform: translateX(-5px);
+    color: #FFB823;
+} */

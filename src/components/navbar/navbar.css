@@ -1,0 +1,33 @@
+/* You can keep your existing CSS, but ensure Tailwind CSS is configured correctly */
+
+ul li:hover {
+  color: #708a58;
+  cursor: pointer;
+}
+
+.zIndex {
+  z-index: 999; /* Changed to z-50 in component for common practice */
+}
+
+.moreNav {
+  font-size: 20px;
+  color: #2d4f2b;
+  padding: 15px 0px; /* Slightly adjusted padding */
+  width: 100%;
+  text-align: center;
+  /* height: 100%; removed as it causes issues with dynamic content */
+  cursor: pointer;
+  transition: ease;
+  border-bottom: 1px #e0e0e0 solid; /* Lighter border */
+}
+
+.moreNav:last-child {
+  border-bottom: none; /* No border for the last item in dropdown */
+}
+
+.moreNav:hover {
+  color: #ffffff;
+  background-color: #2d4f2b;
+}
+
+/* The .hidden and .show classes are now managed by Tailwind CSS directly */

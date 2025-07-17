@@ -1,0 +1,24 @@
+
+
+.animatedBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  width: 400px;
+  height: 300px;
+  background-color: #2D4F2B;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 13px;
+  opacity: 0; /* يبدأ مخفيًا */
+  transform: translateY(50px); /* يبدأ خارج الشاشة قليلًا وإعداد دوران */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* تحديد الانتقالات */
+}
+
+.animatedBox.visible {
+  opacity: 1; /* يظهر عندما يصبح مرئيًا */
+  transform: translateX(2);/* ينتقل إلى موضعه الطبيعي ويدور */
+}
+
