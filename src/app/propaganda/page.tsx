@@ -10,7 +10,7 @@ import { motion, useAnimation } from "framer-motion"; // Import motion and useAn
 
 // Define interface for propaganda card data
 interface PropagandaCardData {
-  //@ts-ignore
+   //@ts-expect-error
   icon: JSX.Element;
   title: string;
   desc: string;
@@ -83,7 +83,7 @@ const AnimatedPropagandaCard: React.FC<{ card: PropagandaCardData; index: number
       ref={ref}
       initial="hidden"
       animate={controls}
-      //@ts-ignore
+   //@ts-expect-error
       variants={cardVariants}
       className="bg-green-700 text-white rounded-xl shadow-xl p-6 flex flex-col items-center justify-center text-center gap-4
                  w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-[400px] h-[280px] sm:h-[300px] hover:scale-105 transition-transform duration-300"

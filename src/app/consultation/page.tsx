@@ -20,29 +20,31 @@ const ConsultationPage = () => {
   const controls = useAnimation();
   const sectionRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          controls.start("visible");
-          observer.unobserve(entry.target); // تشغيل الأنيميشن مرة واحدة
-        }
-      },
-      {
-        threshold: 0.2, // تشغيل الأنيميشن عندما يكون 20% من العنصر مرئيًا
-      }
-    );
+  useEffect(() => {
+    const currentSectionRef = sectionRef.current; // <== ده التعديل: نسخ قيمة الـ ref لمتغير محلي
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start("visible");
+          observer.unobserve(entry.target); // تشغيل الأنيميشن مرة واحدة
+        }
+      },
+      {
+        threshold: 0.2, // تشغيل الأنيميشن عندما يكون 20% من العنصر مرئيًا
+      }
+    );
 
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, [controls]);
+    if (currentSectionRef) { // <== استخدام المتغير المحلي هنا
+      observer.observe(currentSectionRef);
+    }
+
+    return () => {
+      if (currentSectionRef) { // <== استخدام المتغير المحلي هنا
+        observer.unobserve(currentSectionRef);
+      }
+    };
+  }, [controls]);
 
   // متغيرات الأنيميشن لقسم النصائح
   const tipsSectionVariants = {
@@ -91,7 +93,7 @@ const ConsultationPage = () => {
           ref={sectionRef}
           initial="hidden"
           animate={controls}
-          //@ts-ignore
+        //@ts-expect-error
           variants={tipsSectionVariants}
           className="w-full rounded-xl bg-white shadow-lg p-6 sm:p-8 flex flex-col gap-4 border border-gray-200"
         >

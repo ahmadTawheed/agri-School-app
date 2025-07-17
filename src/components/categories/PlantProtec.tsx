@@ -85,7 +85,7 @@ const AnimatedPlantProtectionCard: React.FC<{ card: PlantProtectionCard; index: 
       className="bg-[#F6FBF9] p-6 sm:p-8 rounded-xl border-3 border-[#2D4F2B] flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 w-full max-w-4xl mx-auto shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out"
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      //@ts-ignore
+   //@ts-expect-error
       variants={cardVariants}
     >
       <h2 className="text-xl sm:text-2xl text-[#2D4F2B] font-bold text-center sm:text-right flex-grow">

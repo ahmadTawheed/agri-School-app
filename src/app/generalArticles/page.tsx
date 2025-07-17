@@ -96,7 +96,7 @@ const AnimatedArticleCard: React.FC<{ card: ArticleCardData; index: number }> = 
       ref={ref}
       initial="hidden"
       animate={controls}
-      //@ts-ignore
+      //@ts-expect-error
       variants={cardVariants}
       className="bg-[#F6FBF9] p-6 sm:p-8 rounded-xl border-2 border-[#2D4F2B] flex flex-col items-center justify-between gap-4 w-full max-w-sm sm:max-w-md mx-auto shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out text-center"
     >

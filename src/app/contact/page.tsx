@@ -10,7 +10,7 @@ import { motion, useAnimation } from "framer-motion"; // استيراد motion �
 
 // تعريف واجهة لبيانات معلومات الاتصال
 interface ContactInfoCardData {
-  //@ts-ignore
+   //@ts-expect-error
   icon: JSX.Element;
   title: string;
   value: string;
@@ -42,31 +42,33 @@ const contactInfo: ContactInfoCardData[] = [
 // مكون بطاقة معلومات الاتصال الفردية مع الأنيميشن
 const AnimatedContactCard: React.FC<{ card: ContactInfoCardData; index: number }> = ({ card, index }) => {
   const controls = useAnimation();
-  const ref = useRef(null);
+  const sectionRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          controls.start("visible");
-          observer.unobserve(entry.target); // تشغيل الأنيميشن مرة واحدة
-        }
-      },
-      {
-        threshold: 0.3, // تشغيل الأنيميشن عندما يكون 30% من العنصر مرئيًا
-      }
-    );
+  useEffect(() => {
+    const currentSectionRef = sectionRef.current; // <== ده التعديل: نسخ قيمة الـ ref لمتغير محلي
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start("visible");
+          observer.unobserve(entry.target); // تشغيل الأنيميشن مرة واحدة
+        }
+      },
+      {
+        threshold: 0.2, // تشغيل الأنيميشن عندما يكون 20% من العنصر مرئيًا
+      }
+    );
 
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, [controls]);
+    if (currentSectionRef) { // <== استخدام المتغير المحلي هنا
+      observer.observe(currentSectionRef);
+    }
+
+    return () => {
+      if (currentSectionRef) { // <== استخدام المتغير المحلي هنا
+        observer.unobserve(currentSectionRef);
+      }
+    };
+  }, [controls]);
 
   // الأنيميشن: الدخول من اليمين
   const cardVariants = {
@@ -98,10 +100,10 @@ const AnimatedContactCard: React.FC<{ card: ContactInfoCardData; index: number }
 
   return (
     <motion.div
-      ref={ref}
+      ref={sectionRef}
       initial="hidden"
       animate={controls}
-      //@ts-ignore
+      //@ts-expect-error
       variants={cardVariants}
       className="w-full max-w-2xl rounded-xl bg-white shadow-lg flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 cursor-pointer
                  hover:shadow-xl hover:scale-[1.01] transition-all duration-300 ease-in-out border border-gray-200"

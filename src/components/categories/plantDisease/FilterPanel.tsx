@@ -99,7 +99,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
         >
           <motion.div
             className="w-full max-w-md rounded-xl bg-[#F6FBF9] p-6 sm:p-8 text-center relative"
-            //@ts-ignore
+   //@ts-expect-error
             variants={panelVariants}
             initial="hidden"
             animate="visible"

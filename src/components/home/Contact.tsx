@@ -72,7 +72,7 @@ const Contact = () => {
         className="w-full max-w-5xl flex flex-col md:flex-row items-center justify-center bg-[#F6FBF9] shadow-xl rounded-2xl p-6 sm:p-8 md:p-10 gap-8"
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
-        //@ts-ignore
+   //@ts-expect-error
         variants={boxVariants}
       >
         <div className="flex flex-col items-center md:items-start justify-center gap-5 text-center md:text-right w-full md:w-3/5">

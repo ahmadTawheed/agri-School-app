@@ -23,7 +23,7 @@ const HeroSection = () => {
         {/* Animated Heading */}
         <motion.h1
           className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight"
-            //@ts-ignore
+   //@ts-expect-error
           variants={textVariants}
           initial="hidden"
           animate="visible"
@@ -34,11 +34,11 @@ const HeroSection = () => {
         {/* Animated Paragraph */}
         <motion.p
           className="text-lg sm:text-xl leading-8 sm:leading-9 text-white max-w-3xl"
-            //@ts-ignore
+   //@ts-expect-error
           variants={textVariants}
           initial="hidden"
           animate="visible"
-            //@ts-ignore
+   //@ts-expect-error
           transition={{ ...textVariants.visible.transition, delay: 0.3 }} // Add a slight delay for paragraph
         >
           هل أنت طالب أو خريج زراعة وتبحث عن مصدر موثوق وشامل لكل ما يتعلق
@@ -51,7 +51,7 @@ const HeroSection = () => {
         <Link href="#OurService" scroll={true}> {/* Added scroll={true} for smooth scroll */}
           <motion.button
             className="bg-[#2D4F2B] py-3 px-6 sm:py-4 sm:px-8 rounded-full text-center text-xl sm:text-2xl font-black text-white cursor-pointer hover:bg-[#708A58] transition-all duration-300 ease-in-out shadow-lg"
-            //@ts-ignore
+   //@ts-expect-error
             variants={buttonVariants}
             initial="hidden"
             animate="visible"

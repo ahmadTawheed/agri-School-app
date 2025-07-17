@@ -11,7 +11,7 @@ import { motion } from "framer-motion"; // Import motion for animation
 
 // Define the structure for service card data
 interface ServiceCard {
-      //@ts-ignore
+   //@ts-expect-error
   icon: JSX.Element; // React icon component
   title: string;
   desc: string;
@@ -93,7 +93,7 @@ const AnimatedServiceCard: React.FC<{ card: ServiceCard; index: number }> = ({ c
       className="bg-[#2D4F2B] p-6 rounded-2xl flex flex-col items-center justify-center gap-4 text-center w-full max-w-sm sm:w-80 h-72 shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer"
       initial="hidden"
       animate={inView ? "visible" : "hidden"} // Animate based on inView state
-      //@ts-ignore
+   //@ts-expect-error
       variants={cardVariants}
     >
       <h1 className="text-5xl text-[#ffff]">{card.icon}</h1> {/* Larger icon size */}
