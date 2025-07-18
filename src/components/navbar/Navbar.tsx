@@ -50,7 +50,10 @@ const Navbar = () => {
     <nav className="w-full h-[100px] bg-[#F6FBF9] flex items-center justify-between px-4 md:px-20 fixed z-50 shadow-md">
       {/* Logo */}
       <Link href="/" onClick={closeAllMenus}>
-        <Image className="w-[8rem]" src={dbImg.logoPng} alt="logo" />
+        <Image 
+                draggable={false}
+          priority={false}  
+      className="w-[8rem]" src={dbImg.logoPng} alt="logo" />
       </Link>
 
       {/* Desktop Navigation */}

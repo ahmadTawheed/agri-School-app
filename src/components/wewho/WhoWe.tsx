@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { FaLeaf } from "react-icons/fa";
 import { dbImg } from "@/imgs/dbImg"; // تأكد من أن هذا المسار صحيح لصورك
 import { MdOutlineDeveloperMode, MdConnectWithoutContact } from "react-icons/md";
@@ -11,8 +11,7 @@ import { motion, useAnimation } from "framer-motion"; // استيراد motion �
 
 // بيانات بطاقات "قيمنا التي نؤمن بها"
 interface WhyWeCardData {
-   //@ts-expect-error
-  icon: JSX.Element;
+  icon: any;
   title: string;
   desc: string;
 }
@@ -83,7 +82,6 @@ const AnimatedValueCard: React.FC<{ card: WhyWeCardData; index: number }> = ({ c
       ref={ref}
       initial="hidden"
       animate={controls}
-   //@ts-expect-error
       variants={cardVariants}
       className="bg-green-700 text-white rounded-xl shadow-xl p-6 flex flex-col items-center justify-center text-center gap-4
                  w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-[400px] h-[280px] sm:h-[300px] hover:scale-105 transition-transform duration-300"
@@ -122,6 +120,8 @@ const WhoWe = () => {
         <h2 className="text-3xl sm:text-4xl font-bold text-green-800 mb-6">المؤسس</h2>
         <div className="flex flex-col md:flex-row-reverse items-center md:items-start justify-center md:justify-between gap-8 p-6 bg-white rounded-xl shadow-lg">
           <Image
+                    draggable={false}
+          priority={false}
             className="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover shadow-xl border-4 border-green-200"
             src={dbImg.ahmedJpg} // تأكد من وجود هذه الصورة في dbImg
             alt="صورة المهندس أحمد توحيد"
@@ -138,16 +138,28 @@ const WhoWe = () => {
           {/* أيقونات التواصل الاجتماعي */}
           <div className="grid grid-cols-2 gap-4 p-4 bg-green-50 rounded-lg shadow-inner">
             <a href="#" target="_blank" rel="noopener noreferrer">
-              <Image src={dbImg.face} alt="Facebook" width={30} height={30} className="w-10 h-10 transition-transform hover:scale-110 cursor-pointer" />
+              <Image
+                        draggable={false}
+          priority={false}
+              src={dbImg.face} alt="Facebook" width={30} height={30} className="w-10 h-10 transition-transform hover:scale-110 cursor-pointer" />
             </a>
             <a href="#" target="_blank" rel="noopener noreferrer">
-              <Image src={dbImg.link} alt="LinkedIn" width={30} height={30} className="w-10 h-10 transition-transform hover:scale-110 cursor-pointer" />
+              <Image
+                        draggable={false}
+          priority={false}
+              src={dbImg.link} alt="LinkedIn" width={30} height={30} className="w-10 h-10 transition-transform hover:scale-110 cursor-pointer" />
             </a>
             <a href="#" target="_blank" rel="noopener noreferrer">
-              <Image src={dbImg.git} alt="GitHub" width={30} height={30} className="w-10 h-10 transition-transform hover:scale-110 cursor-pointer" />
+              <Image
+                        draggable={false}
+          priority={false}
+              src={dbImg.git} alt="GitHub" width={30} height={30} className="w-10 h-10 transition-transform hover:scale-110 cursor-pointer" />
             </a>
             <a href="#" target="_blank" rel="noopener noreferrer">
-              <Image src={dbImg.behan} alt="Behance" width={30} height={30} className="w-10 h-10 transition-transform hover:scale-110 cursor-pointer" />
+              <Image
+                        draggable={false}
+          priority={false}
+              src={dbImg.behan} alt="Behance" width={30} height={30} className="w-10 h-10 transition-transform hover:scale-110 cursor-pointer" />
             </a>
           </div>
         </div>

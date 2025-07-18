@@ -1,5 +1,4 @@
 // components/plantDisease/IntroDise.tsx (مثال - قم بتعديله ليناسب المحتوى الفعلي)
-import React from 'react';
 import { FaLeaf } from 'react-icons/fa';
 
 const IntroDise: React.FC = () => {

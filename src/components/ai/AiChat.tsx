@@ -5,7 +5,6 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useState, useRef, useEffect } from 'react';
 import { IoSend, IoMic, IoStopCircle } from 'react-icons/io5';
 import { marked } from 'marked';
-import Image from 'next/image';
 
 // تعريف واجهة SpeechRecognition (للتوافقية مع TypeScript)
 declare global {

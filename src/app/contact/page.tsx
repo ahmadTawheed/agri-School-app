@@ -10,8 +10,7 @@ import { motion, useAnimation } from "framer-motion"; // استيراد motion �
 
 // تعريف واجهة لبيانات معلومات الاتصال
 interface ContactInfoCardData {
-   //@ts-expect-error
-  icon: JSX.Element;
+  icon: any;
   title: string;
   value: string;
   link?: string; // لربط البريد الإلكتروني أو الهاتف إذا لزم الأمر
@@ -103,7 +102,6 @@ const AnimatedContactCard: React.FC<{ card: ContactInfoCardData; index: number }
       ref={sectionRef}
       initial="hidden"
       animate={controls}
-      //@ts-expect-error
       variants={cardVariants}
       className="w-full max-w-2xl rounded-xl bg-white shadow-lg flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 cursor-pointer
                  hover:shadow-xl hover:scale-[1.01] transition-all duration-300 ease-in-out border border-gray-200"

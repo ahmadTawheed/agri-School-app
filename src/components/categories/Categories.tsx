@@ -101,7 +101,6 @@ const AnimatedCategoryCard: React.FC<{ card: CategoryCard; index: number }> = ({
       className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-center gap-4 w-full max-w-sm sm:w-80 h-48 text-center border border-gray-200 hover:shadow-xl transition-shadow duration-300 ease-in-out"
       initial="hidden"
       animate={inView ? "visible" : "hidden"} // تفعيل الحركة بناءً على حالة الرؤية
-   //@ts-expect-error
       variants={cardVariants}
     >
       <h2 className="text-xl sm:text-2xl text-[#2D4F2B] font-bold">{card.name}</h2>

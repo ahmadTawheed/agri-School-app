@@ -72,7 +72,6 @@ const Contact = () => {
         className="w-full max-w-5xl flex flex-col md:flex-row items-center justify-center bg-[#F6FBF9] shadow-xl rounded-2xl p-6 sm:p-8 md:p-10 gap-8"
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
-   //@ts-expect-error
         variants={boxVariants}
       >
         <div className="flex flex-col items-center md:items-start justify-center gap-5 text-center md:text-right w-full md:w-3/5">
@@ -92,12 +91,13 @@ const Contact = () => {
 
         <div className="w-full md:w-2/5 flex justify-center items-center">
           <Image
+          draggable={false}
+          priority={false}
             className="w-48 sm:w-64 md:w-72 h-auto object-contain" // Adjusted image sizing
             src={contactImg} // Using renamed import
             alt="contact us illustration"
             width={300} // Added width and height for Next/Image optimization
             height={300}
-            priority // Load this image earlier if it's above the fold
           />
         </div>
       </motion.div>

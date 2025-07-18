@@ -11,12 +11,13 @@ const Footer = () => {
         <div className="flex flex-col items-center md:items-start justify-center gap-4 w-full md:w-auto md:max-w-[300px] text-center md:text-right">
           <Link href="/">
             <Image
+          draggable={false}
+          priority={false}
               className="w-[150px] mb-2 mx-auto md:mx-0"
               src={dbImg.logoPng}
               alt="logo"
               width={150} // Optimized for Next/Image
               height={50} // Optimized for Next/Image
-              priority // If footer is usually visible on load
             />
           </Link>
           <p className="text-base sm:text-lg text-[#2D4F2B]">

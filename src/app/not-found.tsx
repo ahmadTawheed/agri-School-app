@@ -5,6 +5,8 @@ const NotFoundPage = () => {
         <section className='h-[100vh] flex items-center justify-center'>
           <div className='flex flex-col items-center justify-center'>
           <Image
+          draggable={false}
+          priority={false}
           className='w-[100px] mb-5'
           src={dbImg.emptyJob} alt='emptyJop' />
           <h2> لا يوجد محتوى هنا ! </h2>

@@ -93,7 +93,6 @@ const ConsultationPage = () => {
           ref={sectionRef}
           initial="hidden"
           animate={controls}
-        //@ts-expect-error
           variants={tipsSectionVariants}
           className="w-full rounded-xl bg-white shadow-lg p-6 sm:p-8 flex flex-col gap-4 border border-gray-200"
         >

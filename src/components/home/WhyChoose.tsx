@@ -9,8 +9,7 @@ import { motion } from "framer-motion"; // Import motion for animation
 
 // Define the structure for choose card data
 interface ChooseCard {
-   //@ts-expect-error
-  icon: JSX.Element; // React icon component
+  icon: any; // React icon component
   title: string;
   desc: string;
 }
@@ -87,7 +86,6 @@ const AnimatedChooseCard: React.FC<{ card: ChooseCard; index: number }> = ({ car
       className="bg-[#2D4F2B] p-6 rounded-2xl flex flex-col items-center justify-center gap-4 text-center w-full max-w-sm sm:w-80 h-72 shadow-xl hover:scale-105 transition-transform duration-300 ease-in-out"
       initial="hidden"
       animate={inView ? "visible" : "hidden"} // Animate based on inView state
-   //@ts-expect-error
       variants={cardVariants}
     >
       <h1 className="text-5xl text-[#ffff]">{card.icon}</h1> {/* Larger icon size */}
