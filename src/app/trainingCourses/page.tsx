@@ -1,6 +1,5 @@
 // في صفحتك الرئيسية (مثل pages/courses.tsx أو pages/index.tsx)
 import CourseCard from '@/components/trainPlant/CourseCard';
-import Image from 'next/image'; // تأكد من استيراد Image هنا أيضًا إذا كنت تستخدمه مباشرة
 import { dbImg } from "@/imgs/dbImg";
 
 const CoursesPage: React.FC = () => {
