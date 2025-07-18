@@ -3,7 +3,7 @@ import { FaLeaf } from 'react-icons/fa';
 
 const IntroDise: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-3 mt-10 sm:mt-12 lg:mt-16 text-center">
+    <div className="flex flex-col items-center justify-center gap-3 mt-22 sm:mt-22 lg:mt-16 text-center">
       <div className="flex items-center justify-center gap-3">
         <FaLeaf className="text-4xl sm:text-5xl text-[#2D4F2B]" />
         <h1 className="text-4xl sm:text-5xl lg:text-6xl text-[#2D4F2B] font-bold leading-tight">
